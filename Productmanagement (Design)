@@ -1,0 +1,43 @@
+---
+config:
+  layout: dagre
+---
+flowchart TD
+    A[Start] --> A1[RfX from Sales]
+    A1 --> A2[RfQ]
+    A2 <--> A3[Close Exchange with Sales - Commercial Side]
+    A1 --> A4[Safe RfX Files]
+    A2 --> B[Concept Development]
+    B --> B2{Is Concept approved by Customer?}
+    B2 -- yes --> C[Task Distribution]
+    B2 -- No --> B
+    C --> D[Mechanical Design Start]
+    C --> G
+    C --> C2[Automation Design]
+    C --> C3[Electrical Design]
+    C --> C4[Process Design]
+    C --> C5[Interface Design]
+    C --> C6[Supplier]
+    C --> C8[Preliminary Projectplan - PM]
+    C6 --> C7[Technical Proposal]
+    C7 --> H2
+    C8 --> H2
+    D --> F{Design Feedback Loop}
+    F -- validated --> H2
+    G --> H{Are Deviations agreed upon?}
+    H -- no --> G[Deviation Check]
+    F -- not validated -->D
+    H -- yes --> H2[Quotation with Technical Proposal]
+    H2 --> I[PO - Separate in Sales!!!]
+    I --> J[Kick-Off initial Documentation]
+    J --> J2[Mechanical Task Definition & Execution]
+    I --> K[Deviation List post Order]
+    I --> O[Contact PM for Ordering of Supplier Quotation]
+    O --> O2[Technical Loops with Supplier]
+    K --> L[Deviation Check post-PO]
+    L --> M{Are Deviations agreed upon?}
+    M -- No --> L
+    M -- Yes --> N[Design Freeze]
+    N --> P[Save required Documents]
+    N --> P1[Handover PM - Milestone Payment]
+    
