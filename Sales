@@ -1,0 +1,22 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start"] --> B[Lead Generation]
+    B --> C[Lead in CRM]
+    C --> D[Contact Lead]
+    D --> D1[NDA]
+    D1 --> E[Initial Kick-Off]
+    E --> F[RfX]
+    F --> F4{4 Eye Principle: Is the Calculation correct?}
+    F4 -- no --> F
+    F --> F2[Safe RfX Documents]
+    F --> F3[Close Exchange with Producmanagement]
+    F4 -- yes --> G[Proposal & Quotation]
+    G --> H[Project Calculation]
+    H --> I{4 Eye Principle: Is the Calculation correct?}
+    I -- no --> H
+    I -- yes --> J[Quotation into Signature Drive]
+    J --> K[Send entire Quotation]
+    K --> L[Receive PO, safe file and handover to PM] 
