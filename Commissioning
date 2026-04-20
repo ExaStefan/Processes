@@ -1,0 +1,22 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start"] --> B["Assembly at Exacom/Supplier"]
+    B -- f --> C["Mechanical Commissioning"]
+    C -- f --> D["Pneumatic Commissioning"]
+    D -- f --> E["Electrical Commissioning"]
+    E -- f --> F["Software Booting"]
+    F -- f --> G["Functionality Test Run"]
+    G -- f --> H["Handover to Process Team, FAT"]
+    H --> H1["Hand required Documentation to PM"]
+    H -- s --> I["Disassembly"]
+    I -- s --> J["Transport to Customer"]
+    J -- s --> M["Mechanical Commissioning"]
+    M -- s --> N["Pneumatic Commissioning"]
+    N -- s --> O["Electrical Commissioning"]
+    O -- s --> P["Software Booting"]
+    P -- s --> Q["Functionality Test Run"]
+    Q -- s --> R["Handover to Process Team, SAT"]
+    R --> R1["Notify PM in order to receive SAT Protocol"] & S["End"]
