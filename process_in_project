@@ -1,0 +1,32 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start"] --> B["Commissioning Completed"]
+    B --> C["Handover to Process Team"]
+    C --> D["Calibration"]
+    D --> E["MSA1a"]
+    E --> F["Inspection Plan Integration"]
+    F --> F2[Pipeline Set-Up]
+    F2 --> G["Image Acquisition Setup / Image Chain"]
+    G --> H["Quality Optimization"]
+    H --> I["AI Training*"]
+    I --> J["Process Validation"]
+    J --> K2[FAT]
+    J --> K["Handover to PM"]
+    K <--> K2
+    K --> L
+    K2 --> L["Disassembly"]
+    L --> M["Transport to Customer"]
+    M --> N["Calibration"]
+    N --> O["MSA1a"]
+    O --> P["Inspection Plan Integration"]
+    P --> Q["Image Acquisition Setup / Image Chain"]
+    Q --> R["Quality Optimization"]
+    R --> S["AI Re-Training"]
+    S --> T["Process Validation"]
+    T --> T2[Handover to PM]
+    T2 --> V
+    T2 <--> U
+    T --> U["SAT"] --> V["End"]
