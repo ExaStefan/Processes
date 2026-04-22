@@ -3,6 +3,7 @@ config:
   layout: dagre
 ---
 flowchart TD
+    A0[Feasibility Study]
     A[Start] --> A1[RfX from Sales]
     A1 --> A2[RfQ]
     A2 <--> A3[Close Exchange with Sales - Commercial Side]
@@ -19,6 +20,8 @@ flowchart TD
     C --> C5[Interface Design]
     C --> C6[Supplier]
     C --> C8[Preliminary Projectplan - PM]
+    C --> C9[Commissioning]
+    C9 --> D2[Sign-Off Adaption according to Specs]
     C6 --> C7[Technical Proposal]
     C7 --> H2
     C8 --> H2
