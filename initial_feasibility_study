@@ -1,0 +1,14 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start"] --> B["Initial Technical Assessment"]
+    B --> C["Sample Request"]
+    C --> D["Feasibility Testing"]
+    D --> E["Application Report"]
+    E --> F{"Feasible?"}
+    F -- Yes --> G["Proceed to RFQ / Concept"]
+    F -- No --> H["Reject or Rework"]
+    G --> I["End"]
+    H --> I
