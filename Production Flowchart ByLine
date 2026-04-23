@@ -1,0 +1,14 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start"] --> B["Load Cells onto Tray"]
+    B --> C["Insert Tray into Machine"]
+    C --> D["Pick Cell from Tray"]
+    D --> E["Position Cell for Scan"]
+    E --> F["Return Cell to Tray"]
+    F --> G{"Tray Fully Processed?"}
+    G -- No --> D
+    G -- Yes --> H["Remove Tray"]
+    H --> I["End"]
