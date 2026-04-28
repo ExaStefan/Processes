@@ -6,14 +6,14 @@ flowchart TB
     A["Process Design Input (D4)"] --> B["Understand Inspection Criteria"]
     B --> C["Clarify Requirements with Customer"]
     C --> G[FMEA with Customer]
-    C --> D["Develop Inspection Plan"]
+    C --> D["Develop Inspection Plan - after Technical Proposal!!!"]
     D --> D2{Do we need Custom SW Elements?}
-    D2 -- yes --> E{"Do we have Reference Samples?"}
-    D2 -- no --> D3[SW request for Atoms, AI Models etc.]
+    D2 -- no --> E{"Do we have Reference Samples?"}
+    D2 -- yes --> D3[SW request for Atoms, AI Models etc.]
     D3 --> E
-    E -- yes --> E2[Development with Samples]
+    E -- yes --> E2[Development with Samples 95percent]
     E -- no --> E3[Use Dummy Data]
-    E2 --> F["Inspection Plan Finalization"]
+    E2 --> F["Inspection Plan Finalization - long after Technical Proposal"]
     E3 --> F
     G --> J
     F --> J["Technical Proposal (H2)"]
