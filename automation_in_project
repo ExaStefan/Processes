@@ -1,0 +1,20 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start Assembly"] --> B["Check Parts Availability"]
+    B --> C["Pneumatic & Electrical Setup"]
+    C --> D["PLC Installation"]
+    D --> E["Baseline Software Setup"]
+    E --> F["Hardware Configuration"]
+    F --> G["I/O Check"]
+    G --> H["Programming"]
+    H --> I["Integration (PLC & Robot)"]
+    I --> J["System Test Run"]
+    J --> K["Safety Test"]
+    K --> L["Automation Documentation"]
+    L --> M["Automation Sign-Off"]
+    M --> N["FAT Support"]
+    N --> O["Handover to Process Team"]
+    O --> P["End"]
