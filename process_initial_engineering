@@ -9,6 +9,7 @@ flowchart TB
     C --> D["Develop Inspection Plan - after Technical Proposal!!!"]
     D --> D2{Do we need Custom SW Elements?}
     D2 -- no --> E{"Do we have Reference Samples?"}
+    E -- Information on Expenses --> E4[Technical Proposal]
     D2 -- yes --> D3[SW request for Atoms, AI Models etc.]
     D3 --> E
     E -- yes --> E2[Development with Samples 95percent]
@@ -16,4 +17,4 @@ flowchart TB
     E2 --> F["Inspection Plan Finalization - long after Technical Proposal"]
     E3 --> F
     G --> J
-    F --> J["Technical Proposal (H2)"]
+    F --> J["FAT Direction"]
