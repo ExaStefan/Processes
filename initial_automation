@@ -1,0 +1,13 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Start"] --> B["Understand Requirements"]
+    B --> C["Define System Concept"]
+    C --> D["Define Interfaces"]
+    D --> E["Select Components"]
+    E --> F["Define Architecture"]
+    F --> G["Estimate Effort & Cost"]
+    G --> H["Create Technical Proposal"]
+    H --> I["End"]
