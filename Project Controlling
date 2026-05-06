@@ -1,0 +1,43 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+
+%% --- PAYMENT PROCESS ---
+subgraph Payment_Process
+    A["Quotation Created [↔ Sales / Product Mgmt]"] 
+    A --> B["Signature Process*"]
+    B --> C["Quotation Tracking"]
+    C --> D["PO Received [↔ Customer]"]
+    D --> E["Initial Payment Trigger"]
+    E --> F["Payment Monitoring"]
+    F --> F2["Milestone Payment Tracking [↔ PM]"]
+end
+
+%% --- SIGNATURE / APPROVAL PROCESS ---
+subgraph Signature_Process
+    G["Documents Prepared [↔ Sales / PM / Product Mgmt]"]
+    G --> H["Internal Review"]
+    H --> H1["Internal Signature"]
+    H1 -->H2{External Signature necessary?}
+    H2 -- no --> J
+    H2 -- yes --> I["Customer Submission"]
+    I --> J["Signature / Approval"]
+    J --> K["Sign-Off Tracking"]
+end
+
+%% --- EXCHANGE WITH CONSTRUCTION ---
+subgraph Construction_Interface
+    L["Requirements Input [↔ Product Mgmt]"]
+    L --> M["Budget Allocation"]
+    M --> N["Cost Tracking [↔ Automation / Mechanical Viscom]"]
+    N --> O["Deviation Monitoring ↔ Product Mgmt"]
+    O --> P{"Budget OK?"}
+    P -- Yes --> Q["Continue"]
+    P -- No --> R["Escalation [↔ Management / Customer]"]
+end
+
+%% --- SUBGRAPH CONNECTIONS ---
+F --> M
+R --> E
