@@ -41,46 +41,4 @@ flowchart TB
     
     U --> V["Final Acceptance"]
     
-    V --> W["Project Closure & LL Analysis"]---
-config:
-  layout: dagre
----
-flowchart TB
-    A["Start"] --> B["Internal Kick-Off"]
-    B --> C["Preliminary Project Plan"]
-    
-    C --> D["Customer Alignment [↔ Product Mgmt]"]
-    D --> E["PO"]
-
-    E --> F["Requirements Consolidation [↔ Product Mgmt / Automation]"]
-    F --> G[Design Freeze]
-    G --> G2["Documentation Setup"]
-      
-    G2 --> H["Prepare Travel Infrastucture"]
-    
-    H --> I["Regular Updates with Customer"]
-    I --> I2["Set FAT Appointment"]
-    I2 --> J["Progress Tracking Pre-FAT"]
-    
-    J --> L["Technical Alignment [↔ Automation / Process]"]
-    
-    L --> M["FAT Preparation [↔ Automation / Process / Commissioning]"]
-    M --> N["FAT Coordination"]
-
-    N --> N2["FAT Documentation"]
-    N --> O["FAT Reserve List & Resolution [↔ All Departments]"]
-    O --> P["FAT Sign-Off"]
-    
-    P --> Q["Delivery Coordination [↔ Logistics / Commissioning]"]
-    Q --> Q2["Set SAT Appointment"]
-
-    Q2 --> R["SAT Preparation [↔ Commissioning / Process / AI]"]
-    R --> S["SAT Coordination"]
-    
-    S --> S2["SAT Documentation"]
-    S --> T["SAT Reserve List & Resolution [↔ All Departments]"]
-    T --> U["SAT Sign-Off"]
-    
-    U --> V["Final Acceptance"]
-    
     V --> W["Project Closure & LL Analysis"]
