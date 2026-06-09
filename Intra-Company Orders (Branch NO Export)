@@ -1,0 +1,46 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+ subgraph Viscom["Viscom"]
+        D["Create Quotation"]
+        G["PO for Machine Hardware incoming"]
+        I["Machine Construction finalized"]
+  end
+ subgraph Exacom["Exacom"]
+        C1["Create Quotation"]
+        C[Receive PO]
+        C --> C3[Create RfQ for Viscom / Supplier]
+        E["Create PO"]
+        H["Internal Project Mgmt."]
+        J["Commissioning"]
+  end
+ subgraph subGraph2["3rd Supplier"]
+        D1[Create Quotation]
+        F["PO incoming"]
+        K["Tasks Accomplished"]
+  end
+ subgraph subGraph3["Viscom Branch"]
+        A["PO incoming"]
+        B["Create RfQ for Exacom"]
+        B1["Create PO"]
+        M["Receive entire System"]
+        N["Delivery to final Customer"]
+  end
+    G --> I
+    E --> H & F & G
+    H --> J
+    F --> K
+    A --> B
+    M --> N
+    B --> C1
+    C1 --> B1
+    D --> E
+    C3 --> D1
+    I --> J
+    K --> J
+    J --> M
+    B1 --> C
+    C3 --> D
+    D1 --> E
