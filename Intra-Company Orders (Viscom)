@@ -1,0 +1,43 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+
+%% --- Viscom ---
+subgraph Viscom
+    A[PO incoming]
+    A --> B[Create RfQ for Exacom]
+    D[Order Quotation]
+    G[PO for Machine Hardware incoming]
+    G --> I[Machine Construction finalized]
+    L[Receive entire System]
+    L --> M[Delivery to final Customer]
+end
+
+%% --- Exacom ---
+subgraph Exacom
+    C[Create Quotation]
+    E[PO incoming]
+    E --> H[Internal Project Mgmt.]
+    J[Commissioning]
+    H --> J
+
+end
+
+%% --- 3rd Party ---
+subgraph 3rd Supplier
+    F[PO incoming]
+    F --> K[Tasks Accomplished]
+end
+
+
+%% --- SUBGRAPH CONNECTIONS ---
+B --> C
+C --> D
+D --> E
+E--> F
+E --> G
+I --> J
+K --> J
+J --> L
